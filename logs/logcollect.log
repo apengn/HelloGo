@@ -1,0 +1,9 @@
+2018/03/11 13:35:49 [D] this is a test, my name is stu01
+2018/03/11 13:35:49 [D] this is a trace, my name is stu02
+2018/03/11 13:35:49 [W] this is a warn, my name is stu03
+2018/03/11 13:38:42 [D] this is a test, my name is stu01
+2018/03/11 13:38:42 [D] this is a trace, my name is stu02
+2018/03/11 13:38:42 [W] this is a warn, my name is stu03
+2018/03/11 13:39:00 [D] this is a test, my name is stu01
+2018/03/11 13:39:00 [D] this is a trace, my name is stu02
+2018/03/11 13:39:00 [W] this is a warn, my name is stu03
