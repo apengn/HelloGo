@@ -2,10 +2,10 @@ package tail
 
 import (
 	"github.com/hpcloud/tail"
-	"fmt"
 	"time"
 	"github.com/astaxie/beego/logs"
 	"sync"
+	"fmt"
 )
 
 type CollectConf struct {
@@ -89,8 +89,12 @@ func readFromTail(tailObj TailObj) (ok bool) {
 		Topic: tailObj.conf.Topic,
 	}
 
-	//tailObjMgr.msgChan <- msg
+	tailObjMgr.msgChan <- msg
 
-	fmt.Println(*msg)
+	fmt.Println(GetFromChan(),"============")
 	return ok
+}
+
+func GetFromChan() *TextMsg {
+	return <-tailObjMgr.msgChan
 }

@@ -1,9 +1,10 @@
 package main
 
-import "HelloGo/src/type_aliases"
+import "fmt"
 
-//类型定义   与原类型不同  互相赋值需要转换
-type  t	type_aliases.T2
 func main() {
+	mySlice := make([]int, 100)
 
+	copy(mySlice[3:5] ,[]int{3, 4})
+	fmt.Println(mySlice[3:5])
 }

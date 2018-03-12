@@ -5,10 +5,11 @@ import (
 	"github.com/astaxie/beego/logs"
 	"HelloGo/logagent/tail"
 	"time"
+	"os"
 )
 
 func main() {
-
+	fmt.Println(os.Getwd())
 	err := loadConfig("ini", "./logagent/config/log.conf")
 	if err != nil {
 		panic(err.Error())
@@ -25,7 +26,10 @@ func main() {
 		}
 	}()
 
+
+
 	logs.Debug("init logger success")
 	tail.InitTail(appConfig.CollectConf)
+
 
 }
