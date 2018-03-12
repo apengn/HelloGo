@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a5869a1-79ad-4dc7-977e-620e9b6ecca5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/logagent/etcd/etcd.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day12/etcd_conn/main.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day12/etcd_conn/main.go" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/day12/etcd_watch/main.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/etcd_conn.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/logagent/main.exe" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/day12/etcd_watch/main.go" afterPath="$PROJECT_DIR$/day12/etcd_watch/main.go" />
-      <change beforePath="$PROJECT_DIR$/logagent/config/log.conf" afterPath="$PROJECT_DIR$/logagent/config/log.conf" />
-      <change beforePath="$PROJECT_DIR$/logagent/main/config.go" afterPath="$PROJECT_DIR$/logagent/main/config.go" />
-      <change beforePath="$PROJECT_DIR$/logagent/main/main.go" afterPath="$PROJECT_DIR$/logagent/main/main.go" />
-      <change beforePath="$PROJECT_DIR$/logagent/tail/tail.go" afterPath="$PROJECT_DIR$/logagent/tail/tail.go" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -434,7 +433,7 @@
       <workItem from="1520742075715" duration="11656000" />
       <workItem from="1520769784226" duration="3397000" />
       <workItem from="1520778429988" duration="611000" />
-      <workItem from="1520823932826" duration="13886000" />
+      <workItem from="1520823932826" duration="13934000" />
     </task>
     <task id="LOCAL-00001" summary="redis">
       <created>1520521995627</created>
@@ -464,15 +463,21 @@
       <option name="project" value="LOCAL" />
       <updated>1520848535333</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="kafka  etcd  context">
+      <created>1520853914006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520853914006</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39993000" />
+    <option name="totallyTimeSpent" value="40041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -487,7 +492,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37726524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
