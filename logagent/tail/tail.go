@@ -4,8 +4,8 @@ import (
 	"github.com/hpcloud/tail"
 	"time"
 	"github.com/astaxie/beego/logs"
+	"HelloGo/logagent/etcd"
 	"sync"
-	"fmt"
 )
 
 type CollectConf struct {
@@ -35,13 +35,13 @@ var (
 	tailObjMgr *TailObjMgr
 )
 
-func InitTail(conf []CollectConf) {
+func InitTail(conf []CollectConf, chanSize int) {
 
 	if len(conf) == 0 {
 		logs.Error("invalid config for log collect, conf:%v", conf)
 	}
 	tailObjMgr = &TailObjMgr{
-		msgChan: make(chan *TextMsg, 100),
+		msgChan: make(chan *TextMsg, chanSize),
 	}
 
 	for _, v := range conf {
@@ -91,7 +91,7 @@ func readFromTail(tailObj TailObj) (ok bool) {
 
 	tailObjMgr.msgChan <- msg
 
-	fmt.Println(GetFromChan(),"============")
+	etcd.PutToEtcd(*GetFromChan())
 	return ok
 }
 

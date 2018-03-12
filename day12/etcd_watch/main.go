@@ -25,7 +25,7 @@ func main() {
 	defer client.Close()
 
 	for {
-		resp := client.Watch(context.Background(), "logger")
+		resp := client.Watch(context.Background(), "nginx_log")
 		for wresp := range resp {
 			for _, ev := range wresp.Events {
 				fmt.Printf("%s %q :%q\n", ev.Type, ev.Kv.Key, ev.Kv.Value)

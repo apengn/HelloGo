@@ -6,6 +6,7 @@ import (
 	"HelloGo/logagent/tail"
 	"time"
 	"os"
+	"HelloGo/logagent/etcd"
 )
 
 func main() {
@@ -26,10 +27,11 @@ func main() {
 		}
 	}()
 
-
-
 	logs.Debug("init logger success")
-	tail.InitTail(appConfig.CollectConf)
+	tail.InitTail(appConfig.CollectConf, appConfig.chanSize)
 
-
+	err=etcd.InitEtcd(appConfig.Endpoint)
+	if err != nil {
+		panic(err.Error())
+	}
 }

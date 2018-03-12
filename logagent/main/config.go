@@ -5,12 +5,16 @@ import (
 	"fmt"
 	"HelloGo/logagent/tail"
 	"github.com/astaxie/beego/logs"
+	"os"
 )
 
 type Config struct {
 	LogLevel    string
 	LogPath     string
 	CollectConf []tail.CollectConf
+
+	chanSize int
+	Endpoint []string
 }
 
 var (
@@ -40,13 +44,11 @@ func loadConfig(adapterName, filename string) (err error) {
 	}
 	appConfig.LogPath = logPath
 
-
 	cc := tail.CollectConf{}
 	tialPath := config.String("collect::log_path")
 	if len(tialPath) == 0 {
 		logs.Error("tial file empty")
-		panic("tial file empty")
-
+		panic("tail file empty")
 		return
 	}
 	cc.LogPath = tialPath
@@ -57,8 +59,18 @@ func loadConfig(adapterName, filename string) (err error) {
 	cc.Topic = tialTopic
 	appConfig.CollectConf = append(appConfig.CollectConf, cc)
 
+	chanSize, err := config.Int("collect::chanSize")
+	if os.IsExist(err) {
+		chanSize = 100
+	}
+	appConfig.chanSize = chanSize
 
-
+	endPoint1 := config.String("etcd::Endpoint1")
+	appConfig.Endpoint = append(appConfig.Endpoint, endPoint1)
+	endPoint2 := config.String("etcd::Endpoint2")
+	appConfig.Endpoint = append(appConfig.Endpoint, endPoint2)
+	endPoint3 := config.String("etcd::Endpoint3")
+	appConfig.Endpoint = append(appConfig.Endpoint, endPoint3)
 
 	return
 }
