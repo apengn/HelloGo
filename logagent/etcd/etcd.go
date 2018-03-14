@@ -5,8 +5,8 @@ import (
 	etctClient "github.com/coreos/etcd/clientv3"
 	"os"
 	"github.com/astaxie/beego/logs"
-	"HelloGo/logagent/tail"
 	"context"
+	"fmt"
 )
 
 var (
@@ -20,14 +20,19 @@ func InitEtcd(Endpoint []string) (err error) {
 		logs.Error(err)
 		return
 	}
+	logs.Info("etcd connect success")
 	return
 }
 
-func PutToEtcd(msg tail.TextMsg) {
+func PutToEtcd(topic,msg string) {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	cancel()
-	_, err := client.Put(ctx, msg.Topic, msg.Msg)
+	res, err := client.Put(ctx, topic, msg)
 	if os.IsExist(err) {
-		logs.Error("put etcd fail", msg.Topic, msg.Msg)
+		panic(err)
+		logs.Error("put etcd fail", topic, msg)
 	}
+
+	fmt.Printf("put etcd  topic==%v   msg:=====%v\n",topic,msg)
+	fmt.Println(res.OpResponse(),"================")
 }

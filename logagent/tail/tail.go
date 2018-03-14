@@ -89,12 +89,14 @@ func readFromTail(tailObj TailObj) (ok bool) {
 		Topic: tailObj.conf.Topic,
 	}
 
-	tailObjMgr.msgChan <- msg
+	//tailObjMgr.msgChan <- msg
+	//msg1 := *GetFromChan()
+	go etcd.PutToEtcd(msg.Topic, msg.Msg)
 
-	etcd.PutToEtcd(*GetFromChan())
 	return ok
 }
 
 func GetFromChan() *TextMsg {
+
 	return <-tailObjMgr.msgChan
 }

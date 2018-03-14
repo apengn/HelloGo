@@ -26,13 +26,14 @@ func main() {
 	for {
 		count++
 		ctx, cancel := context.WithTimeout(context.Background(), time.Second)
-		_, err = client.Put(ctx, "logger", "sample_value"+string(count))
+		resp, err := client.Put(ctx, "nginx_log", "sample_value"+string(count))
 		cancel()
 		if err != nil {
 			fmt.Println("put etcd kv failed", err)
 			return
 		}
 		time.Sleep(time.Second)
+		fmt.Println(resp.OpResponse(),"===")
 	}
 	//ctx, cancel = context.WithTimeout(context.Background(), time.Second)
 	//resp, err := client.Get(ctx, "logger")
