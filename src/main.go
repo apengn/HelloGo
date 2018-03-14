@@ -2,9 +2,14 @@ package main
 
 import "fmt"
 
+func test() func() {
+	x := 100
+	fmt.Printf("x (%p) = %d\n", &x, x)
+	return func() {
+		fmt.Printf("x (%p) = %d\n", &x, x)
+	}
+}
 func main() {
-	mySlice := make([]int, 100)
-
-	copy(mySlice[3:5] ,[]int{3, 4})
-	fmt.Println(mySlice[3:5])
+	test()
+	//f()
 }
