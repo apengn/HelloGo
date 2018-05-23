@@ -1,15 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"time"
+	"fmt"
+)
 
-func test() func() {
-	x := 100
-	fmt.Printf("x (%p) = %d\n", &x, x)
-	return func() {
-		fmt.Printf("x (%p) = %d\n", &x, x)
-	}
-}
 func main() {
-	test()
-	//f()
+
+
+	c:=make(chan int)
+
+	w:=make(chan int)
+
+	go func() {
+
+		select {
+		case  <-c:
+		case <-time.After(time.Second*3):
+			fmt.Println("Time out")
+			w<-2
+		}
+	}()
+
+
+	<-w
 }
