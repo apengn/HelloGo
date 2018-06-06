@@ -14,3 +14,19 @@ func main() {
 	Foo(x)
 	panic(func() {})
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sfsfsafa
