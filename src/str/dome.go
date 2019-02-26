@@ -17,6 +17,6 @@ func main() {
 
 	newBuffer:=bytes.NewBuffer(b)
 	newBuffer.Write(b)
-	newBuffer.ReadBytes()
+	// newBuffer.ReadBytes()
 fmt.Println(newBuffer.String())
 }

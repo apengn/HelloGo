@@ -20,7 +20,7 @@ func main() {
 
 	socketListener := &SocketListener{handfunc: make(map[string]func(rw *bufio.ReadWriter))}
 	socketListener.lock=new(sync.Mutex)
-	socketListener.handfunc["xxx"] = func(rw *bufio.ReadWriter) {
+	socketListener.handfunc["xxx.txt"] = func(rw *bufio.ReadWriter) {
 		fmt.Println(rw.ReadString('\n'))
 		rw.WriteString("Thank YOU  \n")
 		rw.Flush()

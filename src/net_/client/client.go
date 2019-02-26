@@ -11,7 +11,8 @@ import (
 
 func main() {
 
-	ipaddress := flag.String("connect", "localhost"+model.Port, "")
+	ipaddress := flag.String("connect", "10.0.0.100"+model.Port, "")
+	//ipaddress := flag.String("connect", "localhost"+model.Port, "")
 	flag.Parse()
 
 	conn, err := net.Dial("tcp", *ipaddress)
@@ -22,7 +23,7 @@ func main() {
 	}
 
 	rw := bufio.NewReadWriter(bufio.NewReader(conn), bufio.NewWriter(conn))
-	rw.WriteString("xxx\n")
+	rw.WriteString("xxx.txt\n")
 	rw.WriteString("xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n")
 
 	rw.Flush()

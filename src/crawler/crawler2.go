@@ -27,7 +27,7 @@ func main() {
 		//fmt.Printf("%s\n",string(contents))
        buf:=make([]byte,1024)
 
-       f,err:=os.OpenFile("baidu.html",os.O_RDWR|os.O_CREATE|os.O_APPEND,os.ModePerm)
+       f,err:=os.OpenFile("xxx.html",os.O_RDWR|os.O_CREATE|os.O_APPEND,os.ModePerm)
 
 		if err !=nil {
 			Print(err)

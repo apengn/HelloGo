@@ -17,7 +17,7 @@ type S struct {
 }
 
 func (t3 T3) greeting() (i int){
-	fmt.Println("xxx")
+	fmt.Println("xxx.txt")
 	i=0
 	return i
 }

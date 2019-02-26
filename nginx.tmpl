@@ -1,0 +1,21 @@
+
+   stream { {{range .Upstream}}
+	  upstream  {{.Name}} { {{range .Server}}
+	    server {{.}};{{end}}
+	 }{{end}}
+	}
+	http { {{range $s := .Server}}
+	  server {
+		listen       {{$s.Listen}};
+		server_name  {{$s.ServerName}};  {{range $upstream := $s.Upstream}} {{ $streamName := $upstream.Name }} {{range $upstream.Location }}  {{if .Error }}
+
+		error_page   500 502 503 504  {{.Location}};
+		location = {{.Location}} {
+		   root   /usr/share/nginx/html;
+		}{{else}}
+
+		location {{.Location}} {
+		  proxy_pass http://{{$streamName}}/{{.Api}};
+		} {{end}}{{end}} {{end}}
+	   }
+{{end}} }
